@@ -1,0 +1,25 @@
+{
+  "original_Gemini_caches_match_E3": {
+    "semantic": true,
+    "direct": true,
+    "ablation_2frame": true
+  },
+  "hybrid_pseudo_arrays_sha256": {
+    "demo_60_pseudo_actions.npy": "893e06d4a68222d00702133e71d27afb6fc81d189bce1f2616741506272cb302",
+    "demo_136_pseudo_actions.npy": "1e02b0654979f6ce7563569285af91a5401bd7da1ba1808f3c3009dbb1321b98",
+    "demo_145_pseudo_actions.npy": "f1254242508bab161f0a5f4d54c71d87aac716d294a625b0a270656caab5a0a4",
+    "demo_138_pseudo_actions.npy": "7d4856949c0cb3c26c6989a21cbe1494fd196d777d0fa4a1507d285b78769432",
+    "demo_68_pseudo_actions.npy": "e1215ca23c1fcdaac6a93b15ce77b293f35e2405b94b1425803084d3c29056bc",
+    "demo_123_pseudo_actions.npy": "f0d8d5e1266e3027ff158d85cc41ee87abc65d897b077fd1f95f371fdbe7dd1c",
+    "demo_153_pseudo_actions.npy": "758e2f22b205d2c4784521ef6f8112cf57dac57cfdcc239d0e15a71b99f78ef7",
+    "demo_198_pseudo_actions.npy": "975939b3ad6c0d71761ca7a98f7f2a42bacaa6a557e30432b470fa70be0ce569",
+    "demo_80_pseudo_actions.npy": "0d4140146b73226fbc7e184dc5361c7bafeed0d921142dc3a4e1e5defd372080",
+    "demo_163_pseudo_actions.npy": "ca65db6a86d1ef76c7df0c33cf61c20c0dc20bbf1aa2bdcda1669b5198aea23a",
+    "demo_39_pseudo_actions.npy": "a115b55faafae335e1c311b338179d1eeb491f3b3a0c75931ed23cf7f44c2cb4",
+    "demo_191_pseudo_actions.npy": "78dfe707d1675bfa1d2a94eed5c0548505724f58810c66afdf8c87638477648e",
+    "demo_99_pseudo_actions.npy": "0755cf1a303b49a8d4e741f9ddbcde1e9bdb10f07097ce5b5313c15d27e50796",
+    "demo_119_pseudo_actions.npy": "56004110c7dd8d623f6c3529f0de97174fc31996a426bd7b9eb3f071ebfdd5e7",
+    "demo_5_pseudo_actions.npy": "430855a1ca5825d30672aa7c34e71fdaeef2e6f8345b6f572dba416c315a9d38",
+    "demo_117_pseudo_actions.npy": "4bf94973628c326e06871ccdfa4301fb5ce9f5a1ed47929633577b63eb1aa413"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "started": 1790030277.506528,
+  "plan_sha256": "48abcbffa88c5662ee76a438b1ca1d7728f4ab0e30552e6deb754a1df0f84457",
+  "client_sha256": "34ddedbc7fdc2d6100b18ff71ed62ae2ebf967e38b45ea0c3debd98c76d9c748",
+  "runner_sha256": "33049a46715033890f5793fd5352d075d75a6b6ca63a23bec2a50481839704ca",
+  "shared_config": {
+    "data_root": "~/.local/share/jev_test",
+    "cache_subdir": "cache",
+    "runs_subdir": "runs",
+    "encoder": {
+      "name": "vit_small_patch14_dinov2.lvd142m",
+      "imagenet_norm": {
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      }
+    },
+    "feature_cache": {
+      "version": "v2_episode_xml",
+      "tokens": "cls+2x2grid+patchmean (6x384 float16)",
+      "stride": 1,
+      "horizon_H": 1
+    },
+    "state_layout": {
+      "time": 1,
+      "nq": 16
+    },
+    "action_norm": {
+      "std_floor": 0.05
+    },
+    "split": {
+      "split_seed": 0,
+      "sizes": {
+        "train": 120,
+        "dev": 20,
+        "calib": 20,
+        "test": 40
+      }
+    },
+    "pilot": {
+      "train_pool": 40,
+      "labeled_train": 24,
+      "dev_labeled": 8,
+      "calib": 8,
+      "eval_holdout": 12
+    },
+    "annotator": {
+      "lr": 0.001,
+      "batch": 64,
+      "steps": 3000,
+      "decoder_steps": 2000,
+      "kl_beta": 0.001,
+      "kwargs": {
+        "b2": {
+          "d": 256,
+          "nlayers": 2,
+          "heads": 4,
+          "ctx": 3
+        },
+        "b3": {
+          "d": 256
+        },
+        "j0_enc": {
+          "zdim": 16,
+          "d": 256,
+          "nlayers": 2,
+          "heads": 4,
+          "ctx": 3
+        },
+        "j0_pred": {
+          "zdim": 16,
+          "d": 256
+        },
+        "j0_dec": {
+          "zdim": 16,
+          "d": 256
+        }
+      }
+    },
+    "consumer": {
+      "lr": 0.0003,
+      "batch": 64,
+      "steps": 3000,
+      "kwargs": {
+        "d": 256,
+        "nlayers": 2,
+        "heads": 4,
+        "ctx": 4
+      }
+    },
+    "intervention": {
+      "n_states": 8,
+      "n_candidates": 8
+    },
+    "e2": {
+      "policy": {
+        "hidden": 256,
+        "layers": 2,
+        "lr": 0.001,
+        "batch": 256,
+        "steps": 3000,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "horizon": 200,
+        "n_starts": 50,
+        "start_seed_base": 10000
+      },
+      "risk": {
+        "threshold_rule": "median B2 error on dev_labeled selection episodes",
+        "coverages": [
+          1.0,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "random_baseline_resamples": 20,
+        "random_seed": 11,
+        "filter_keep_episodes": 8
+      },
+      "obs_keys": [
+        "robot0_eef_pos",
+        "robot0_eef_quat",
+        "robot0_gripper_qpos",
+        "object"
+      ],
+      "advancement": {
+        "c1_risk_ranking": "risk AUC(any-bad) on eval-holdout clearly above 0.5 and risk-selected error below random at matched mid coverage (60% and 40%)",
+        "c2_episode_ranking": "episode mean-risk vs mean-pos-err spearman positive on eval-holdout",
+        "c3_policy_gain": "mean P-JEV success > mean P0 success over 3 policy seeds",
+        "c4_consistency": "per-seed paired \u0394(P-JEV - P0) >= 0 in at least 2 of 3 seeds",
+        "verdict_advance_requires": [
+          "c1_risk_ranking",
+          "c2_episode_ranking",
+          "c3_policy_gain",
+          "c4_consistency"
+        ]
+      }
+    },
+    "e0_thresholds": {
+      "gripper_bimodal_min": 0.05,
+      "alignment_cos_frac_min": 0.7,
+      "replay_audit_episodes": 10,
+      "replay_qpos_max": 0.02,
+      "one_batch_fit_reduction_min": 10.0,
+      "encoder_invariance_max_abs": 0.0001,
+      "replay_image_mae_max": 2.0
+    },
+    "versions": {
+      "robomimic": "0.5.0",
+      "robosuite": "1.5.0",
+      "mujoco": "3.2.3",
+      "dataset": "robomimic v1.5 repackaging (HuggingFace robomimic/robomimic_datasets)",
+      "python": "conda-base 3.11",
+      "torch": "2.10.0"
+    }
+  }
+}

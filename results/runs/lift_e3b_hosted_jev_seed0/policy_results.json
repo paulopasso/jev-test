@@ -1,0 +1,171 @@
+{
+  "arm_means": {
+    "p0": {
+      "mean": 0.14666666666666667,
+      "per_seed": [
+        0.06,
+        0.24,
+        0.14
+      ]
+    },
+    "pb2_filt": {
+      "mean": 0.42,
+      "per_seed": [
+        0.28,
+        0.54,
+        0.44
+      ]
+    },
+    "phybrid": {
+      "mean": 0.24,
+      "per_seed": [
+        0.3,
+        0.24,
+        0.18
+      ]
+    },
+    "phybrid_filt": {
+      "mean": 0.4666666666666666,
+      "per_seed": [
+        0.48,
+        0.48,
+        0.44
+      ]
+    },
+    "pref": {
+      "mean": 0.45333333333333337,
+      "per_seed": [
+        0.4,
+        0.54,
+        0.42
+      ]
+    },
+    "phosted_jev_filt": {
+      "mean": 0.3866666666666667,
+      "per_seed": [
+        0.4,
+        0.36,
+        0.4
+      ]
+    },
+    "pgemini_conf_filt": {
+      "mean": 0.42,
+      "per_seed": [
+        0.36,
+        0.48,
+        0.42
+      ]
+    }
+  },
+  "hosted_minus_comparisons": {
+    "phybrid_filt": {
+      "mean": -0.08,
+      "per_seed": [
+        -0.08,
+        -0.12,
+        -0.04
+      ],
+      "pooled_paired_ci": {
+        "mean": -0.08,
+        "lo": -0.18666666666666668,
+        "hi": 0.02666666666666667,
+        "n": 150
+      },
+      "two_way_seed_start_ci": [
+        -0.22666666666666666,
+        0.06
+      ]
+    },
+    "pgemini_conf_filt": {
+      "mean": -0.03333333333333333,
+      "per_seed": [
+        0.04,
+        -0.12,
+        -0.02
+      ],
+      "pooled_paired_ci": {
+        "mean": -0.03333333333333333,
+        "lo": -0.12666666666666668,
+        "hi": 0.06,
+        "n": 150
+      },
+      "two_way_seed_start_ci": [
+        -0.17333333333333334,
+        0.10666666666666667
+      ]
+    },
+    "p0": {
+      "mean": 0.24,
+      "per_seed": [
+        0.34,
+        0.12,
+        0.26
+      ],
+      "pooled_paired_ci": {
+        "mean": 0.24,
+        "lo": 0.14666666666666667,
+        "hi": 0.32666666666666666,
+        "n": 150
+      },
+      "two_way_seed_start_ci": [
+        0.08,
+        0.4
+      ]
+    },
+    "pref": {
+      "mean": -0.06666666666666667,
+      "per_seed": [
+        0.0,
+        -0.18,
+        -0.02
+      ],
+      "pooled_paired_ci": {
+        "mean": -0.06666666666666667,
+        "lo": -0.16666666666666666,
+        "hi": 0.03333333333333333,
+        "n": 150
+      },
+      "two_way_seed_start_ci": [
+        -0.23333333333333334,
+        0.1
+      ]
+    }
+  },
+  "policy_config": {
+    "hidden": 256,
+    "layers": 2,
+    "lr": 0.001,
+    "batch": 256,
+    "steps": 3000,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "horizon": 200,
+    "n_starts": 50,
+    "start_seed_base": 10000
+  },
+  "filter_keep": {
+    "phosted_jev_filt": [
+      "demo_119",
+      "demo_153",
+      "demo_163",
+      "demo_5",
+      "demo_80",
+      "demo_191",
+      "demo_145",
+      "demo_39"
+    ],
+    "pgemini_conf_filt": [
+      "demo_5",
+      "demo_117",
+      "demo_99",
+      "demo_191",
+      "demo_145",
+      "demo_80",
+      "demo_68",
+      "demo_138"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "task": "lift",
+  "phase": "paired",
+  "arms": ["b0", "b2", "b3", "j0", "ref"],
+  "seeds": [0, 1, 2, 3, 4],
+  "arm": "none",
+  "seed": 0
+}
